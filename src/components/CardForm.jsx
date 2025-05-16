@@ -1,4 +1,13 @@
-import { Button, CloseButton, Dialog, Portal } from "@chakra-ui/react";
+import {
+  Button,
+  CloseButton,
+  Dialog,
+  Field,
+  Fieldset,
+  Input,
+  Portal,
+  Stack,
+} from "@chakra-ui/react";
 
 export const CardForm = ({ trigger }) => {
   return (
@@ -12,10 +21,30 @@ export const CardForm = ({ trigger }) => {
               <Dialog.Title>Dialog Title</Dialog.Title>
             </Dialog.Header>
             <Dialog.Body>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
+              <Fieldset.Root size="lg" maxW="md">
+                <Stack>
+                  <Fieldset.Legend>Contact details</Fieldset.Legend>
+                  <Fieldset.HelperText>
+                    Please provide your contact details below.
+                  </Fieldset.HelperText>
+                </Stack>
+
+                <Fieldset.Content>
+                  <Field.Root>
+                    <Field.Label>Pergunta</Field.Label>
+                    <Input name="question" />
+                  </Field.Root>
+
+                  <Field.Root>
+                    <Field.Label>Resposta</Field.Label>
+                    <Input name="answer" />
+                  </Field.Root>
+                </Fieldset.Content>
+
+                <Button type="submit" alignSelf="flex-start">
+                  Submit
+                </Button>
+              </Fieldset.Root>
             </Dialog.Body>
             <Dialog.Footer>
               <Dialog.ActionTrigger asChild>
